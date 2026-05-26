@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: gestor-tareas
+
+  datasource:
+    # Cambia 'nombre_de_tu_bd' por el nombre que le pusiste a tu esquema en MySQL
+    url: jdbc:mysql://localhost:3306/BDAgenda?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      # Esta es la opción que mencionaste: 'update' crea o actualiza las tablas solas
+      ddl-auto: update
+    show-sql: true # Para que veas en la consola las consultas que Spring hace por ti
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
